@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Arvinw&#39;s blog
+        多线程｜Arvinw&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://arvinws.github.io/archives/2019/">
+    <link rel="canonical" href="http://arvinws.github.io/2020/07/14/多线程/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
 " data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -116,194 +116,140 @@
 
 <!-- Main Content -->
 
+<!--only post-->
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="/img/00390.jpg">
-                        <h5><a href="/about/">雨宸</a></h5>
-                        <p>如果你的才华还实现不了你的野心，那就静下心来，埋头苦干。</p>
+
+<img class="wechat-title-img" src>
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>多线程</h1>
+                    
+                    <span class="meta">
+                         作者 雨宸
+                        <span>
+                          日期 2020-07-14
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
+    <div class="post-title-haojen">
+        <span>
+            多线程
+        </span>
+    </div>
+</header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>线程池按需提供新的工作线程或 I/O 完成线程直到它达到每个类别的最小值。<br>默认情况下，最小线程数设置为在系统上的处理器数。<br>当达到最小值时，线程池可以创建该类别中的其他线程或等待，直到一些任务完成。<br>需求较低时，线程池线程的实际数量可以低于最小值。<br>于是便会出现我们在本文一开始运行时出现的结果图。在我的计算机上（八核），最小线程数是 8，于是开始的 8 个任务可以立即开始执行。当达到数量 8 而依然没有线程完成执行的时候，线程池会尝试等待任务完成。但是，1 秒后依然没有任务完成，于是线程池创建了一个新的线程来执行新的任务；接下来是每隔一秒会开启一个新的线程来执行现有任务。当有任务完成之后，就可以直接使用之前完成了任务的线程继续完成新的任务。</p>
+<p>不过，每个类别创建线程的总数量受到最大线程数限制。</p>
+<p>参考资料<br>TaskScheduler Class (System.Threading.Tasks) - Microsoft Docs<br>TaskCreationOptions Enum (System.Threading.Tasks) - Microsoft Docs<br>Parallel Tasks - Microsoft Docs<br>Attached and Detached Child Tasks - Microsoft Docs<br>在 ThreadPool.GetMinThreads(Int32, Int32) Method (System.Threading) - Microsoft Docs<br>Managed Threading Best Practices - Microsoft Docs</p>
 
+                <hr>
+                
 
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2019/08/25/2/">
-        <h2 class="post-title">
-            Centos 7 配置node 环境
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-25
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                Centos 7 配置node 环境
-确认服务器有nodejs编译及依赖相关软件，如果没有可通过运行以下命令安装。
-安装yum -y install gcc gcc-c++ openssl-devel
-下载nodejs  使用wget 
-
-wget  https://nodejs.org/dis..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2019/03/09/1/">
-        <h2 class="post-title">
-            初始化一个vue项目脚手架 并且引入ElementUI
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                初始化一个vue项目脚手架cnpm install vue 
-全局安装 vue-cli$ cnpm install –global vue-cli
-创建一个基于 webpack 模板的新项目$ vue init webpack my-project
-下一步 需要进行一些配置，默认回车即可配置完成..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2019/03/09/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer i..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
+                <ul class="pager">
                     
-                    <img src="/img/00390.jpg">
                     
-                    <h5><a href="/about/">雨宸</a></h5>
+                    <li class="next">
+                        <a href="/2019/08/25/2/" data-toggle="tooltip" data-placement="top" title="Centos 7 配置node 环境">Next Post &rarr;</a>
+                    </li>
                     
-                    <p>如果你的才华还实现不了你的野心，那就静下心来，埋头苦干。</p>
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
                     
-                    <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        
+                </div>
+            </div>
+        </div>
 
-                        
+        <div class="row">
+            <!-- Sidebar Container -->
 
-                        
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
                         
-                        <li>
-                            <a target="_blank" href="https://github.com/arvinws">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+                    </div>
+                </section>
+                
 
+                <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="https://blog.csdn.net/qq_43378800">风里有诗句</a></li>
+                        
+                        <li><a href="https://www.htmlnb.com/">张欢</a></li>
+                        
+                        <li><a href="https://www.cnblogs.com/wangzai2333/">旺仔2333</a></li>
+                        
+                        <li><a href="http://gilbert.cnblogs.com">仙桃小白菜</a></li>
+                        
+                        <li><a href="https://www.cnblogs.com/jiamiemie/">贾爷</a></li>
                         
                     </ul>
                 </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-            <section>
-                <div class="tags">
-                    
-                </div>
-            </section>
-            
-
-            
-            <hr>
-            <h5 style="text-align: center;">Friends</h5>
-            <ul class="list-inline" style="text-align: center;">
                 
-                <li><a href="https://blog.csdn.net/qq_43378800" target="_blank">风里有诗句</a></li>
-                
-                <li><a href="https://www.htmlnb.com/" target="_blank">张欢</a></li>
-                
-                <li><a href="https://www.cnblogs.com/wangzai2333/" target="_blank">旺仔2333</a></li>
-                
-                <li><a href="http://gilbert.cnblogs.com" target="_blank">仙桃小白菜</a></li>
-                
-                <li><a href="https://www.cnblogs.com/jiamiemie/" target="_blank">贾爷</a></li>
-                
-            </ul>
-            
-
+            </div>
         </div>
+
     </div>
-</div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
